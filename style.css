@@ -1,0 +1,17 @@
+body {
+    background-image: url("fundo.jpg");
+    background-size: auto;
+    font-family: "Montserrat";
+    font: 700;
+    
+}
+
+table, tbody, tr, th, td{
+    background-color: rgba(0, 0, 0, 0.0) !important;
+} 
+
+.form-date, .form-time {
+    border-radius: 3px; 
+    border-style: none;
+    margin-right: 10px;
+}

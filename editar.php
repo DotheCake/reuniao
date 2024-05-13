@@ -15,25 +15,32 @@ while ($umareuniao = mysqli_fetch_assoc($resultado)):
     $hora = $umareuniao['hora'];
     $descricao = $umareuniao ['descricao'];
 endwhile;
+
 ?>
-    <h2>Editar Reunião <?=$id;?></h2>
+<div class="col row justify-content-center ">
+    <div class="col-8 border rounded pt-3 p-5 bg-light bg-opacity-75">
+    <h2>Editar Reunião Sala <?=$sala;?></h2>
+    <br>
     <form method="post" action="atualizar.php?id=<?=$id?>" enctype="multipart/form-data">
         <select name="sala" id="salas" class="form-select">
-            <option selected>Selecione uma sala</option>
-            <option value="1" <?php if ($tipo == '1'){echo "selected";}?>>1</option>
-            <option value="2" <?php if ($tipo == '2'){echo "selected";}?>>2</option>
-            <option value="3" <?php if ($tipo == '3'){echo "selected";}?>>3</option>
+            <option>Selecione uma sala</option>
+    
+            <option value="1" <?php if ($sala == '1'){echo "selected";}?>>1</option>
+            <option value="2" <?php if ($sala == '2'){echo "selected";}?>>2</option>
+            <option value="3" <?php if ($sala == '3'){echo "selected";}?>>3</option>
         </select>
         <br>
         <input type="date" name="data" class="form-date" value="<?=$data?>">
-        <input type="time" name="hora" class="" value="<?=$hora?>">
+        <input type="time" name="hora" class="form-time" value="<?=$hora?>">
         <br> <br>
         <input type="Text" name="descricao" class="form-control" value="<?=$descricao?>"> 
         <br> <br>
-        <button class="btn btn-primary" type="submit"> 
-            Salvar Pokemon
+        <button class="btn btn-dark" type="submit"> 
+            Salvar Edições
         </button>
     </form>
+    </div>
+</div>
 <?php 
 mysqli_close($conexao);
 include "rodape.php"; 
